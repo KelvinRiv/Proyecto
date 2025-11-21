@@ -4,272 +4,31 @@
 <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Espermatogénesis</title>
-<style>
-body {
-background-color: #FCF9EA;
-color: #000;
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-min-height: auto; 
-text-align: center;
-}
-    .cuadroparaeltexto {
-        width: 100%;
-        width: 90%;
-        background-color: #F5D2D2;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        padding: 30px;
 
-    }
-    .marca-de-agua {
-        position:absolute;
-        left:50%;
-        transform: translateX(-50%);
-        opacity: 0.25;
-        pointer-events:none;
-        z-index: 1;
-
-    }
-.titulo-con-imagenes {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 15px;
-margin-bottom: 20px;
-}
-
-.titulo-con-imagenes img {
-width: 120px;
-height: auto;
-border-radius: 12px;
-}
-
-h1 {
-font-size: 2.2em;
-color: #000;
-margin: 10px 0;
-}
-
-h2, h3 {
-margin: 5px 0;
-color: #000;
-}
-
-#info {
-max-width: 800px;
-width: 90%;
-background: #F5D2D2;
-border-radius: 12px;
-padding: 20px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-margin-bottom: 20px;
-}
-
-p {
-font-size: 1em;
-text-align: justify;
-margin: 10px 0;
-color: #000;
-}
-
-button {
-background-color: #FFBDBD;
-color: #000;
-border: none;
-padding: 12px 25px;
-font-size: 1.1em;
-font-weight: bold;
-border-radius: 25px;
-cursor: pointer;
-transition: 0.3s;
-box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-margin-top: 20px;
-}
-
-button:hover {
-background-color: #ff7878;
-transform: scale(1.05);
-}
-
-
-#ar-container {
-width: 100%;
-height: 500px;
-display: none;
-}
-
-/* 🔘 Botón de salir anclado abajo a la derecha */
-#exit-ar {
-position: fixed;
-bottom: 20px;
-right: 20px;
-z-index: 1000;
-padding: 12px 18px;
-background-color: rgba(0, 0, 0, 0.65);
-color: white;
-border: none;
-border-radius: 10px;
-font-size: 1em;
-cursor: pointer;
-backdrop-filter: blur(5px);
-display: none;
-align-items: center;
-gap: 8px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#exit-ar:hover {
-background-color: rgba(255, 0, 0, 0.7);
-transform: scale(1.05);
-}
-
-#exit-ar svg {
-width: 18px;
-height: 18px;
-fill: white;
-}
-.modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0,0,0,0.6);
-justify-content: center;
-align-items: center;
-z-index: 999;
-}
-
-/* Caja del contenido */
-.modal-content {
-background-color: #FCF9EA;
-padding: 25px;
-border-radius: 15px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-max-width: 400px;
-width: 90%;
-text-align: center;
-animation: fadeIn 0.3s ease;
-}
-
-
-.sidebar {
-background-color: #FFBDBD;
-position: fixed;
-left: -200px; 
-top: 0;
-width: 200px;
-height: 100%;
-font-family: Arial, sans-serif;
-z-index: 990;
-transition: left 0.3s ease; 
-display: none; 
-}
-
-.sidebar.active {
-left: 0;
-display: block; 
-}
-
-.sidebar__list {
-list-style: none; 
-padding: 20px 0;
-margin: 0;
-}
-
-.sidebar__title {
-    padding: 15px 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    border-bottom: 1px solid #ff7878;
-}
-
-.sidebar__element {
-margin-bottom: 5px;
-}
-
-.sidebar__link {
-display: block;
-padding: 10px 15px;
-text-decoration: none;
-color: #333;
-text-align: left; 
-transition: background-color 0.2s;
-}
-
-.sidebar__link:hover {
-background-color: #ff7878;
-}
-
-#menu-ar-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.65);
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    display: none; /* Inicialmente oculto */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    transition: background-color 0.3s ease;
-}
-
-#menu-ar-toggle:hover {
-    background-color: rgba(255, 189, 189, 0.7);
-    color: black;
-}
-
-#menu-ar-toggle svg {
-    width: 24px;
-    height: 24px;
-    fill: white;
-}
-
-.sidebar.active + #menu-ar-toggle svg {
-    fill: black;
-}
-</style>
 
 <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/gesture-detector.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/gesture-handler.js"></script>
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/1.12.0/model-viewer.min.js"></script>
+<!--<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/1.12.0/model-viewer.min.js"></script> Son librerias para que funcione lo de los modelos en la parte del model viewer-->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 </head>
 <body>
 
 <div id="info">
 <div class="titulo-con-imagenes">
-<img src="https://github.com/Jesus-2705/prueba.github.io/blob/main/imagenes/medicina%20logo.png?raw=true" alt="Logo Medicina">
 <h1>Espermatogénesis</h1>
-<img src="https://github.com/Jesus-2705/prueba.github.io/blob/main/imagenes/univesidad%20logo.png?raw=true" alt="Logo Universidad">
+<img src="https://github.com/KelvinRiv/Proyecto/blob/main/imagenes/Marca%20de%20agua%20museo.png?raw=true" alt="Marca de agua museo">
 </div>
 <h2>Museo de Embriología</h2>
         <h3>Universidad Autónoma de Chihuahua</h3>
-        <div class= "cuadroparaeltexto">
-            <div class="marca-de-agua"><img src="https://github.com/Jesus-2705/prueba.github.io/blob/main/imagenes/univesidad%20logo.png?raw=true" alt="Logo Universidad"></div>
         <p>La embriología es el estudio del desarrollo de un embrión desde la fecundación del óvulo hasta la octava semana de gestación. Este campo científico es fundamental para comprender cómo se forman los organismos y las estructuras celulares básicas que dan origen a la vida.</p>
         <p>Con esta aplicación usted podrá obtener una experiencia de realidad aumentada donde podrá ver modelos 3D animados de la espermatogénesis. Simplemente inicie la cámara y apunte al marcador Hiro para visualizar el contenido.</p>
-        </div>
   <div id="menu-modelos">
-    <h3>Seleccione un modelo para visualizar:</h3>
-    <button data-model="testiculo"> Testículo</button>
-    <button data-model="engranes"> Engranes</button>
-    <button data-model="animacion"> Animación</button>
+<h3>Si desea una experiencia inmersiva en la embriología da click en el botón de abajo</h3>
+    <button data-model="testiculo"> Experiencia AR </button>
   </div>
 </div>
 
@@ -282,38 +41,46 @@ background-color: #ff7878;
   </div>
 </div>
 
-<nav id="ar-sidebar" class="sidebar">
-    <div class="sidebar__title">Opciones de la Escena</div>
-    <ul class="sidebar__list">
-        <li class="sidebar__element"><a href="#" id ="redsem-btn">Red seminifera</a></li>
-        <li class="sidebar__element"><a href="#" class="sidebar__link">Otra opción para setear</a></li>
-        <li class="sidebar__element"><a href="#" class="sidebar__link">Otra opción para setear</a></li>
+<div class="hamburger-menu">
+    <input id="menu__ham" type="checkbox" />
+    <label class="menu__btn" for="menu__ham">
+      <span></span>
+    </label>
+
+    <ul class="menu__box">
+      <li><a class="menu__item" href="#" id="redsem-btn">Red Seminifera</a></li>
+      <li><a class="menu__item" href="#" id="esp-btn">Espermatogénesis</a></li>
+      <li><a class="menu__item" href="#">Animación</a></li>
     </ul>
-</nav>
+</div>
 
-
-    <div id="redsem-moda" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
-    
-    <div style="background: white; padding: 20px; width: 80%; height: 80%;">
-        <model-viewer
-        src="https://raw.githubusercontent.com/KelvinRiv/Proyecto/main/RedSeminifera.glb" 
-        alt="RedSeminifera"
-        camera-controls
-        shadow-intensity = "1"
-        style="width: 100%; height: 90%;"
-        >
-        </model-viewer>
-        <button id="cerrar-redsem-btn">Cerrar</button>
+  <div id="redsem-moda" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: rgb(218, 218, 218); padding: 20px; width: 80%; height: 80%;">
+    <model-viewer
+    src="https://raw.githubusercontent.com/KelvinRiv/Proyecto/main/RedSeminifera.glb" 
+    alt="RedSeminifera"
+    camera-controls
+    shadow-intensity = "1"
+    style="width: 100%; height: 90%;"
+    >
+    </model-viewer>
+    <button id="cerrar-redsem-btn">Cerrar</button>
     </div>
+</div>
+  <div id="esp-moda" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: rgb(0, 0, 0); padding: 20px; width: 80%; height: 80%;">
+    <ModelViewerElement
+    autoplay  
+    src="https://raw.githubusercontent.com/KelvinRiv/Proyecto/main/Espermatogenesis.glb" 
+    alt="Espermatogenesis"
+    camera-controls
+    shadow-intensity = "1"
+    style="width: 100%; height: 90%;"
+    >
+    </ModelViewerElement>
+    <button id="cerrar-esp-btn">Cerrar</button>
     </div>
-
-
-
-<button id="menu-ar-toggle">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-    </svg>
-</button>
+</div>
 
 
     <button id="exit-ar">
@@ -329,38 +96,48 @@ background-color: #ff7878;
     const info = document.getElementById('info');
     const arContainer = document.getElementById('ar-container');
     const exitBtn = document.getElementById('exit-ar');
-    const sidebar = document.getElementById('ar-sidebar'); 
-    const menuToggleBtn = document.getElementById('menu-ar-toggle'); 
 
-
-
-
+    const menubtn = document.getElementsByClassName('menu__btn')
+    const menu__btn = menubtn[0]
+    
   // Modal
-  const modal = document.getElementById('modal-modelo');
-  const modalTitulo = document.getElementById('modal-titulo');
-  const modalDescripcion = document.getElementById('modal-descripcion');
-  const startBtn = document.getElementById('start-ar');
-  const cerrarModal = document.getElementById('cerrar-modal');
-    const abrirBtn = document.getElementById('redsem-btn');
-    const cerrarBtn = document.getElementById('cerrar-redsem-btn');
-    const moda = document.getElementById('redsem-moda');
+    const modal = document.getElementById('modal-modelo');
+    const modalTitulo = document.getElementById('modal-titulo');
+    const modalDescripcion = document.getElementById('modal-descripcion');
+    const startBtn = document.getElementById('start-ar');
+    const cerrarModal = document.getElementById('cerrar-modal');
+
 
   // Información de cada modelo
   const modelosInfo = {
     testiculo: {
-      titulo: "Modelo del Testículo",
-      descripcion: "Información y así"
-    },
-    engranes: {
-      titulo: "Modelo de Engranes",
-      descripcion: "Información y así"
-    },
-    animacion: {
-      titulo: "Modelo Animado",
-      descripcion: "Información y así"
+      titulo: "Modelos de espermatogénesis",
+      descripcion: 'Al hacer click en el botón de "Iniciar Realidad aumentada", se abrira una nueva pestaña donde necesitaremos que nos permitas acceder a tu cámara y que aceptes otros permisos, asegurate de aceptarlos para que todo funcione correctamente, en caso de no aceptarlos, puedes presionar el botón de salir y volver a la página de inicio. No nos quedamos con ningun dato de los usuarios, todo se borra al salir de la página'
     }
   };
+    const abrirBtn = document.getElementById('redsem-btn');
+    const abriresp = document.getElementById('esp-btn');
+    const cerrarBtn = document.getElementById('cerrar-redsem-btn');
+    const cerraresp = document.getElementById('cerrar-esp-btn');
+    const moda = document.getElementById('redsem-moda');
+    const modalesp = document.getElementById('esp-moda');
 
+    abrirBtn.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        
+        moda.style.display = 'flex'; 
+  });
+    abriresp.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        
+        modalesp.style.display = 'flex'; 
+  });
+    cerrarBtn.addEventListener('click', () => {
+        moda.style.display = 'none'; 
+  });
+    cerraresp.addEventListener('click', () => {
+        modalesp.style.display = 'none'; 
+  });
   // Cuando se da clic en un modelo
   document.querySelectorAll('#menu-modelos button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -373,15 +150,9 @@ background-color: #ff7878;
       // Guardar modelo elegido
       startBtn.dataset.model = modelKey;
     });
+});
 
-  });
-    abrirBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Detiene la navegación del enlace
-        moda.style.display = 'flex'; // Muestra el modal
-  });
-    cerrarBtn.addEventListener('click', () => {
-        moda.style.display = 'none'; // Oculta el modal
-  });
+
   // Cerrar modal
   cerrarModal.addEventListener('click', () => {
     modal.style.display = 'none';
@@ -394,11 +165,11 @@ background-color: #ff7878;
     info.style.display = 'none';
     exitBtn.style.display = 'flex';
     arContainer.style.display = 'block';
-    menuToggleBtn.style.display = 'block'; 
 
-    sidebar.classList.add('active'); 
+    menu__btn.classList.add('active');
 
     const modelKey = startBtn.dataset.model;
+
 
     // Crear la escena AR (código existente)
     const scene = document.createElement('a-scene');
@@ -412,25 +183,10 @@ background-color: #ff7878;
 
     if (modelKey === "testiculo") {
       marker.setAttribute('preset', 'hiro');
-      model.setAttribute('gltf-model', 'models/embriologia/transparente.glb');
+      model.setAttribute('gltf-model', 'embriologia/transparente.glb');
       model.setAttribute('scale', '0.2 0.2 0.2');
       model.setAttribute('rotation', '90 0 180');
     }
-    else if (modelKey === "engranes") {
-      marker.setAttribute('preset', 'kanji');
-      model.setAttribute('gltf-model', 'models/gears/gears.glb');
-      model.setAttribute('scale', '0.1 0.1 0.1');
-    }
-    else if (modelKey === "animacion") {
-      marker.setAttribute('type', 'pattern');
-      marker.setAttribute('url', 'markers/pattern-marcaCreeper.patt');
-      model.setAttribute('gltf-model', 'models/embriologia/Pruebas.glb');
-      model.setAttribute('position', '0 0 0');
-      model.setAttribute('rotation', '0 0 0');
-      model.setAttribute('scale', '0.2 0.2 0.2');
-      model.setAttribute('animation-mixer', '');
-    }
-
 
     model.setAttribute('gesture-handler', '');
     marker.appendChild(model);
@@ -450,9 +206,7 @@ background-color: #ff7878;
     arContainer.innerHTML = '';
     info.style.display = 'block';
     exitBtn.style.display = 'none';
-    menuToggleBtn.style.display = 'none'; 
-    sidebar.classList.remove('active'); 
-
+    menu__btn.classList.remove('active');
     const video = document.querySelector('video');
     if (video && video.srcObject) {
       const stream = video.srcObject;
@@ -461,18 +215,16 @@ background-color: #ff7878;
       video.srcObject = null;
     }
 
-    setTimeout(() => { window.location.reload(); }, 300);
+
+        setTimeout(() => { window.location.reload(); }, 300); /*Este script es el que hace que vuelva a la página principal*/
   });
   
-
-menuToggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-});
 
 </script>
 
 
 </body>
 </html>
+
 
 
