@@ -1,0 +1,239 @@
+
+
+body {
+background-color: #FEF0AF;
+color: #000;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: auto; 
+text-align: center;
+}
+    .cuadroparaeltexto {
+        width: 100%;
+        width: 90%;
+        background-color: #BDAF7F;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+
+    }
+    .marca-de-agua {
+        position:absolute;
+        left:50%;
+        transform: translateX(-50%);
+        opacity: 0.25;
+        pointer-events:none;
+        z-index: 1;
+
+    }
+.titulo-con-imagenes {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+.titulo-con-imagenes img {
+width: 120px;
+height: auto;
+border-radius: 12px;
+}
+
+h1 {
+font-size: 2.2em;
+color: #000;
+margin: 10px 0;
+}
+
+h2, h3 {
+margin: 5px 0;
+color: #000;
+}
+
+#info {
+max-width: 800px;
+width: 90%;
+background: #BDAF7F;
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+margin-bottom: 20px;
+}
+
+p {
+font-size: 1em;
+text-align: justify;
+margin: 10px 0;
+color: #000;
+}
+
+button {
+background-color: #709078;
+color: #000;
+border: none;
+padding: 12px 25px;
+font-size: 1.1em;
+font-weight: bold;
+border-radius: 25px;
+cursor: pointer;
+transition: 0.3s;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+margin-top: 20px;
+}
+
+button:hover {
+background-color: #5d8874;
+transform: scale(1.05);
+}
+
+
+#ar-container {
+width: 100%;
+height: 500px;
+display: none;
+}
+
+/*Este mendigo boton lo cambie tambien para que no saliera así como en gris xd*/
+#exit-ar {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 1000;
+padding: 12px 18px;
+background-color: #709078;
+color: black;
+border: none;
+border-radius: 10px;
+font-size: 1em;
+cursor: pointer;
+backdrop-filter: blur(5px);
+display: none;
+align-items: center;
+gap: 8px;
+box-shadow: 0 4px 12px #709078;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#exit-ar:hover {
+background-color:#5d8874;
+transform: scale(1.05);
+}
+
+#exit-ar svg {
+width: 18px;
+height: 18px;
+fill: black;
+}
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.6);
+justify-content: center;
+align-items: center;
+z-index: 999;
+}
+
+/* Caja del contenido */
+.modal-content {
+background-color: #BDAF7F;
+padding: 25px;
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+max-width: 400px;
+width: 90%;
+text-align: center;
+animation: fadeIn 0.3s ease;
+}
+
+
+    #menu__ham {
+    opacity: 0;
+}
+#menu__ham:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__ham:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__ham:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__ham:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+    display: none;
+}
+.menu__btn.active {
+    display: block;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color:#3a706a;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #709078;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+
+}
+.menu__item:hover {
+  background-color:#5d8874;
+}
+
+
+
+
