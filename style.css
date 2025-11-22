@@ -326,6 +326,13 @@ opacity: 0;
   cursor: pointer; /*Esto es para que interactue con el ratón, en este caso para que se haga más oscuro*/
 }
 
+@media (max-width: 600px) {
+    #exit-ar {
+        font-size: 18px !important; 
+        padding: 15px 15px !important;
+    }
+}
+
 
 
 
