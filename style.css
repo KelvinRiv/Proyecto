@@ -14,8 +14,11 @@ height: 100hv;
 display: flex; 
 flex-direction: column;
 align-items: center;
+justify-content: center;
+padding: 20;
 gap: 15px;
 margin-bottom: 20px;
+box-sizing: border-box;
 }
 
 /*Este que dice "img" es porque está especificando que, dentro del apartado de tituclo-con-imagenes, hay una imagen y quiero que lleve este formato*/
@@ -329,6 +332,7 @@ opacity: 0;
         padding: 15px 15px !important;
     }
 }
+
 
 
 
