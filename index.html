@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial scale=1.0">
-    <title>Espermatogénesis</title>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Espermatogénesis</title>
 
-
-<script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/gesture-detector.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/gesture-handler.js"></script>
-<!--<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/1.12.0/model-viewer.min.js"></script> Son librerias para que funcione lo de los modelos en la parte del model viewer-->
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.0.0/dist/aframe-extras.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/gesture-detector.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/fcor/arjs-gestures@master/gesture-handler.js" defer></script>
 </head>
-<body>
 
+<body>
 <div id="info">
 <div class="titulo-con-imagenes">
 <h1>Museo de Embriología</h1>
 <img src="https://github.com/KelvinRiv/Proyecto/blob/main/imagenes/Marca%20de%20agua%20museo.png?raw=true" alt="Marca de agua museo">
+</div>
 <h2>Espermatogénesis</h2>
 
         <h3>Universidad Autónoma de Chihuahua</h3>
@@ -40,7 +39,7 @@
     <button id="cerrar-modal">Cerrar</button>
   </div>
 </div>
-</div>
+
 <div class="hamburger-menu">
     <input id="menu__ham" type="checkbox" />
     <label class="menu__btn" for="menu__ham" >
@@ -100,9 +99,7 @@
   </button>
 
     <div id="ar-container"></div>
+
 <script src ="JavaScriptMuseo.js"></script>
 </body>
 </html>
-
-
-
