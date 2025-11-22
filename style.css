@@ -4,11 +4,7 @@ background: #192338;
 background: linear-gradient(180deg,rgba(25, 35, 56, 1) 0%, rgba(30, 46, 79, 1) 50%, rgba(49, 72, 122, 1) 100%);
 font-family: Arial, sans-serif;
 margin: 0;
-padding: 20px;
-display: flex; /*Esto del flex es para que haga un contenedor flex y que los demás que estén dentro de este contenedor se puedan acomodar de manera flexible y en 1 dimensión (filas o columnas)*/
-flex-direction: column; /*Este nos marca por ejemplo que tome en cuenta las columnas*/
-align-items: center;
-justify-content: center;
+padding: 0; /*Esto del flex es para que haga un contenedor flex y que los demás que estén dentro de este contenedor se puedan acomodar de manera flexible y en 1 dimensión (filas o columnas)*/
 min-height: auto; 
 text-align: center;
 }
@@ -334,6 +330,7 @@ opacity: 0;
         padding: 15px 15px !important;
     }
 }
+
 
 
 
